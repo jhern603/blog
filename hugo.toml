@@ -1,4 +1,4 @@
-baseURL = '/'
+baseURL = 'http://josehernandez.dev/'
 languageCode = 'en-us'
 title = 'Jose Hernandez'
 theme = "poison"
