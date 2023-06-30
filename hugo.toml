@@ -1,0 +1,17 @@
+baseURL = '/'
+languageCode = 'en-us'
+title = 'Jose Hernandez'
+theme = "poison"
+[params]
+	brand = 	"Jose Hernandez"
+	brand_image = 	"/images/portrait.jpg"
+	favicon = 	"/images/favicon.ico"
+	descrption = 	"A place for me to post my thoughts and experiences from life in the hopes it helps someone else"
+	dark_mode = 	true
+    	menu = [
+        	{Name = "Posts", URL = "/posts/", Pre = "Recent", HasChildren = true, Limit = 5},
+    	]
+        linkedin_url =  "https://linkedin.com/in/jhern603"
+	github_url = 	"https://github.com/jhern603"
+	instagram_url = "https://instagram.com/jhernandez554"
+	email_url = 	"mailto://contact@josehernandez.dev"
