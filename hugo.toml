@@ -1,7 +1,8 @@
-baseURL = ''
+baseURL = '/'
 languageCode = 'en-us'
 title = 'Jose Hernandez'
 theme = "poison"
+canonifyURLs = true
 [params]
 	brand = 	"Jose Hernandez"
 	brand_image = 	"/images/portrait.jpg"
