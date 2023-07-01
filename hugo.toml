@@ -16,3 +16,10 @@ canonifyURLs = true
 	github_url = 	"https://github.com/jhern603"
 	instagram_url = "https://instagram.com/jhernandez554"
 	email_url = 	"mailto://contact@josehernandez.dev"
+
+
+[taxonomies]
+  category = 'categories'
+  series = 'series'
+  tag = 'tags'
+

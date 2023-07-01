@@ -1,6 +1,7 @@
 ---
 title: "From the Field to an Office - A Programmatic Journey"
 date: 2023-06-30T19:45:08-05:00
+tags: ['life', 'ramblings']
 draft: false 
 ---
 ## A Start with no Starting Line
