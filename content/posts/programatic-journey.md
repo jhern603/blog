@@ -47,7 +47,7 @@ As the number of rejection emails started getting closer to the number of applic
 
 I was being interviewed for the Oracle Cloud Infrastructure. I had no idea how the cloud worked, so how the heck am I even supposed to join a team who lives in the cloud? Oracle didn't care. I went through 4 interviews in the span of 2 weeks. Then the waiting began. Some days went by, my anxiety was killing me. It felt like I was waiting for the final season of Futurama to air. Then, I get a phone call.
 
-"Hi Jose! I'm <redacted> from Oracle. We would love to extend an offer for you to join this summer as an intern!" This opening statement felt like somebody just lifted 3 cars off of my shoulders. The call that everyone dreams about. With it being the only offer I had, I had no other option but to say yes.
+"Hi Jose! I'm [redacted] from Oracle. We would love to extend an offer for you to join this summer as an intern!" This opening statement felt like somebody just lifted 3 cars off of my shoulders. The call that everyone dreams about. With it being the only offer I had, I had no other option but to say yes.
 
 I am now a Software Engineer Intern for Oracle's Cloud Infrastructure. Years of stressing about being homeless was gone. My time in the military is paying off. My (at the time) small amount of programming knowledge from school is going to be put to use. I am inevitable. I am an engineer.
 
