@@ -1,6 +1,6 @@
 ---
 title: "Mindless Ramble"
-date: 2023-01-31T17:05:10-05:00
+date: 2023-01-30T17:05:10-05:00
 draft: false
 tags: ['ramblings']
 ---
@@ -10,6 +10,7 @@ There's truly no coherent purpose to this post. This is in essence a vomit of wh
 
 If you decide to read this, then I wish you the best of luck on this journey. I will likely not proofread this post, nor do I intend to.
 
+Keep in mind, this is entirely just me pouring emotions and feelings out onto my keyboard. The goal is to externalize what I am feeling and thinking through a written medium. There are no clear sequence of events because of how intermingled everything truly is in my brain.
 
 ## Ch 1) Anxiety and Depression
 The month of January started off... Somewhat happily. I started the year with confidence that everything was going perfectly, yet, as the month progressed, it turned into a deep spiral downward. I started developing romantic feelings for a person whom I think sees me as nothing more than an acquaintance. A family member passed away from a cardiac arrest, after enduring a 72 hour PSV. My finances are also taking a perfect 90 degree downward fall. The combination of these three things have felt like I slammed into a wall. If I were in a car going 110mph and somehow survived, that is.
@@ -22,13 +23,13 @@ I kept kicking myself harer as I thought, "she will never talk to me again in my
 
 Here comes the weekend. Great, 2 full days of nothing but me being stuck with my own thoughts. "This is going to be worse than a  mental hell," I thought. I had to find a way to distract myself. I started doing some chores. I finished those quicker than I thought I could. I decided, let me do something that I know takes a while. I started washing my car. All of a sudden, I felt my phone vibrate in my pocket. It was her. "Oh god no, this is it for me. This is when I should just bury myself, mentally and physically." Yet to my surprise, it was less-taxing that I thought it would be. I interpreted the message as she was open to giving me another chance. I replied with the most heartfelt apology I have ever done. It felt like I was physically breaking open my chest and handing it to her, as if to say, "please, forgive me." I felt like an abused dog. I felt as if I was getting a chance at life again.
 
-"i can’t say it’s okay, but i can say, im glad you saw the error in that." Every word in that sentence hit me like a freight train. I knew what I said was insensitive. I knew that I shouldn't have even thought about that word. Yet, it had left me that night. As I took time to process the following messages, I started becoming teary eyed. I was crying. I hadn't cried because of emotional pain in years. I had forgotten what it felt like to cry. I felt some form of relief. She overlooked what I had said. She accepted my apology. I... Felt like I was reborn. Not because of an apology, but because I remembered what it was like ot have emotions again.
+"i can’t say it’s okay, but i can say, im glad you saw the error in that." Every word in that sentence hit me like a freight train. I knew what I said was insensitive. I knew that I shouldn't have even thought about that word. Yet, it had left me that night. As I took time to process the following messages, I started becoming teary eyed. I was crying. I hadn't cried because of emotional pain in years. I had forgotten what it felt like to cry. I felt some form of relief. She overlooked what I had said. In a sense, she accepted my apology. I... Felt like I was reborn. 
 
-I never considered to have been completely heartless. Yet, in a way I was. My entire personality was reformed when I was in Iraq. I didn't notice it, nobody around me at the time noticed. Yet, my mother noticed it when I came back. She never said  anything, though. I went on for 4 years thinking, "I'm okay, everyone around me is just too emotional." Yet, this was the moment that broke that for me. This was the moment that brought me back down to Earth.
+I never considered myself to have been completely heartless. Yet, in a way I was. My entire personality was reformed when I was in Iraq. I didn't notice it, nobody around me at the time noticed. Yet, my mother noticed it when I came back. She never said  anything, though. I went on for 4 years thinking, "I'm okay, everyone around me is just too emotional." Yet, this was the moment that broke that for me. This was the moment that brought me back down to Earth.
 
 I was hurt and relieved at the same time. I was deeply hurt because of the thought that I hurt someone that I supposedly loved. I was relieved because of the thought that I was hurt.
 
-From there on, I felt like my personality started changing again. This time, emotions were being introduced. Nervousness, happiness, sadness. Emotions I haven't felt in so long. It felt refreshing.
+From there on, I felt like my personality started changing again. This time, emotions were being introduced. Nervousness, happiness, sadness, adoration. Emotions I haven't felt in so long. It felt refreshing.
 
 ## Ch 2) Finances
 Here I am. I "started" a new job, I graduated college, I left the Army. Yet my finances was taking a decline almost as fast as my mental sanity. I thought this year would be the end of financial struggles. Instead, it started with financial struggles. I started looking at financial support initiatives, especially for housing. *All* of them have the same top requirement. "Must have received an eviction notice." Why are these programs designed to help you when it's practically too late? All I need is time.
