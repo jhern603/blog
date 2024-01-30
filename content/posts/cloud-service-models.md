@@ -1,7 +1,7 @@
 ---
 title: "The Three Service Models in the Cloud"
 date: 2023-07-07T20:44:10-05:00
-draft: false
+draft: true
 tags: ['cloud-development', 'tips']
 ---
 The cloud is an abstract concept that has been around for a while. It can be generally defined as a platform where you can upload anything, and not have to worry about maintaining the machines behind it.
