@@ -1,7 +1,7 @@
 ---
 title: "Mindless Ramble"
 date: 2023-01-30T17:05:10-05:00
-draft: false
+draft: true
 tags: ['ramblings']
 ---
 
