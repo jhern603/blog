@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(hugo --minify)",
+      "Bash(powershell -Command \"cd ''C:\\\\Users\\\\JHern\\\\Documents\\\\code_bases\\\\blogs''; hugo --minify 2>&1\")",
+      "Bash(powershell -Command \"Get-Command hugo -ErrorAction SilentlyContinue; where.exe hugo 2>&1; ls ''C:\\\\Program Files\\\\Hugo'' 2>&1; ls $env:LOCALAPPDATA\\\\Hugo 2>&1; ls $env:GOPATH\\\\bin\\\\hugo* 2>&1\")",
+      "Bash(powershell -Command \"Get-ChildItem -Recurse ''C:\\\\Users\\\\JHern\\\\Documents\\\\code_bases\\\\blogs'' -Exclude ''public'' | Where-Object { -not $_PSIsContainer } | Select-Object -ExpandProperty FullName | Sort-Object\")",
+      "Bash(powershell -Command \"Get-ChildItem -Recurse ''C:\\\\Users\\\\JHern\\\\Documents\\\\code_bases\\\\blogs'' | Where-Object { -not $_PSIsContainer -and $_FullName -notlike ''*\\\\public\\\\*'' } | Select-Object -ExpandProperty FullName | Sort-Object\")",
+      "Bash(\"C:\\\\Users\\\\JHern\\\\Documents\\\\code_bases\\\\blogs\\\\.gitignore\":*)"
+    ]
+  }
+}

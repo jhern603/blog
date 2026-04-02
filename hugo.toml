@@ -1,10 +1,10 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://blog.josehernandez.dev/'
 languageCode = 'en-us'
-title = 'JAH'
-theme = 'jah'
+title = 'Jose Hernandez'
+theme = 'Jose Hernandez'
 
 [params]
-  author        = 'J.A. Hernandez'
+  author        = 'Jose Hernandez'
   description   = 'Engineering. Architecture. Craft.'
   tagline       = 'Engineering done right. Written down.'
   githubHandle  = ''
