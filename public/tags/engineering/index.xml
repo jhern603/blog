@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Engineering on JAH</title>
+    <link>http://localhost:1313/tags/engineering/</link>
+    <description>Recent content in Engineering on JAH</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Apr 2026 00:00:00 -0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/engineering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>I Built a Blog. Here&#39;s Why That&#39;s the Hard Part.</title>
+      <link>http://localhost:1313/posts/first-post/</link>
+      <pubDate>Thu, 02 Apr 2026 00:00:00 -0600</pubDate>
+      <guid>http://localhost:1313/posts/first-post/</guid>
+      <description>&lt;p&gt;Every engineer has notes. Drafts in Notion. Threads that never got posted. Slack messages that could have been blog posts.&lt;/p&gt;&#xA;&lt;p&gt;I had all of that. What I didn&amp;rsquo;t have was a place to put it.&lt;/p&gt;&#xA;&lt;p&gt;So I built one.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-decision-to-build-not-use&#34;&gt;The Decision to Build, Not Use&lt;/h2&gt;&#xA;&lt;p&gt;Ghost, Substack, Medium — they all work. Millions of people publish on them every week. But I wanted a few things none of them offer without compromise:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

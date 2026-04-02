@@ -1,0 +1,20 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-logo">JAH</span>
+      <p class="footer-tagline">{{ .Site.Params.tagline }}</p>
+    </div>
+    <div class="footer-meta">
+      <p class="footer-copy">
+        &copy; {{ now.Format "2006" }} {{ .Site.Params.author }}.
+        Built with <a href="https://gohugo.io" class="footer-link" target="_blank" rel="noopener">Hugo</a>.
+      </p>
+      {{ with .Site.Params.githubHandle }}
+        <a href="https://github.com/{{ . }}" class="footer-link" target="_blank" rel="noopener">GitHub</a>
+      {{ end }}
+      {{ with .Site.Params.twitterHandle }}
+        <a href="https://twitter.com/{{ . }}" class="footer-link" target="_blank" rel="noopener">Twitter</a>
+      {{ end }}
+    </div>
+  </div>
+</footer>

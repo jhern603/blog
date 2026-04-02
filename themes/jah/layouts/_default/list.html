@@ -1,0 +1,45 @@
+{{ define "main" }}
+
+<section class="list-hero">
+  <div class="list-hero-inner">
+    <p class="eyebrow-label">{{ .Title }}</p>
+    <h1 class="list-heading">
+      Every post.<br>
+      <span class="gradient-text">All the work.</span>
+    </h1>
+    {{ with .Description }}
+      <p class="list-description">{{ . }}</p>
+    {{ end }}
+  </div>
+</section>
+
+<section class="posts-section">
+  <div class="section-inner">
+    {{ $paginator := .Paginator }}
+    {{ if gt (len $paginator.Pages) 0 }}
+      <div class="posts-grid">
+        {{ range $paginator.Pages }}
+          {{ partial "post-card.html" . }}
+        {{ end }}
+      </div>
+      {{/* Pagination */}}
+      {{ if gt $paginator.TotalPages 1 }}
+      <nav class="pagination" aria-label="Page navigation">
+        {{ if $paginator.HasPrev }}
+          <a href="{{ $paginator.Prev.URL }}" class="pagination-link pagination-prev">&larr; Newer</a>
+        {{ end }}
+        <span class="pagination-info">
+          Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}
+        </span>
+        {{ if $paginator.HasNext }}
+          <a href="{{ $paginator.Next.URL }}" class="pagination-link pagination-next">Older &rarr;</a>
+        {{ end }}
+      </nav>
+      {{ end }}
+    {{ else }}
+      <p class="empty-state">No posts yet. Check back soon.</p>
+    {{ end }}
+  </div>
+</section>
+
+{{ end }}

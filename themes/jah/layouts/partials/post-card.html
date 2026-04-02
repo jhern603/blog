@@ -1,0 +1,50 @@
+<article class="post-card">
+  <div class="post-card-inner">
+
+    {{- with .Params.categories }}
+      <div class="post-card-eyebrow">
+        {{- range first 1 . }}
+          <span class="eyebrow-label">{{ . }}</span>
+        {{- end }}
+      </div>
+    {{- end }}
+
+    <h2 class="post-card-title">
+      <a href="{{ .Permalink }}" class="post-card-link">
+        {{- $gradientWord := .Params.gradientWord -}}
+        {{- if $gradientWord -}}
+          {{- $title := .Title -}}
+          {{- $parts := split $title $gradientWord -}}
+          {{- index $parts 0 -}}<span class="gradient-text">{{ $gradientWord }}</span>{{- strings.TrimPrefix (printf "%s%s" (index $parts 0) $gradientWord) $title -}}
+        {{- else -}}
+          {{ .Title }}
+        {{- end -}}
+      </a>
+    </h2>
+
+    <p class="post-card-summary">
+      {{- with .Description -}}
+        {{ . }}
+      {{- else -}}
+        {{ truncate 140 "..." .Summary }}
+      {{- end -}}
+    </p>
+
+    <div class="post-card-meta">
+      <time class="post-card-date" datetime="{{ .Date.Format "2006-01-02" }}">
+        {{ .Date.Format "Jan 2, 2006" }}
+      </time>
+      <span class="post-card-sep">&middot;</span>
+      <span class="post-card-reading-time">{{ .ReadingTime }} min read</span>
+    </div>
+
+    {{- with .Params.tags }}
+      <div class="post-card-tags">
+        {{- range first 3 . }}
+          <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag-pill">{{ . }}</a>
+        {{- end }}
+      </div>
+    {{- end }}
+
+  </div>
+</article>

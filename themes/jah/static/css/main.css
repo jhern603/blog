@@ -1,0 +1,817 @@
+/* ============================================================
+   JAH Blog — main.css
+   Dark navy palette · Inter typeface · Animated gradient accent
+   ============================================================ */
+
+/* ── 1. DESIGN TOKENS ──────────────────────────────────────── */
+:root {
+  /* Palette */
+  --color-bg:         #243448;
+  --color-surface:    #1C2D3E;
+  --color-border:     #3A5170;
+  --color-text:       #E8EDF2;
+  --color-text-muted: #7A95AB;
+  --color-accent:     #5BB8D4;
+
+  /* Gradient stops */
+  --gradient-start:   #5BB8D4;
+  --gradient-mid:     #2A7BA0;
+  --gradient-end:     #1A6FA5;
+
+  /* Typography */
+  --font-family:      'Inter', system-ui, -apple-system, sans-serif;
+  --weight-regular:   400;
+  --weight-medium:    500;
+  --weight-semibold:  600;
+  --weight-bold:      700;
+  --weight-black:     900;
+
+  /* Spacing scale */
+  --space-xs:   0.25rem;
+  --space-sm:   0.5rem;
+  --space-md:   1rem;
+  --space-lg:   1.5rem;
+  --space-xl:   2rem;
+  --space-2xl:  3rem;
+  --space-3xl:  4rem;
+  --space-4xl:  6rem;
+
+  /* Shape */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-pill: 9999px;
+
+  /* Layout */
+  --max-width-content: 720px;
+  --max-width-site:    1200px;
+  --nav-height:        64px;
+
+  /* Motion */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+}
+
+/* ── 2. RESET & BASE ───────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  font-weight: var(--weight-regular);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* ── 3. TYPOGRAPHY ─────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--weight-black);
+  line-height: 1.15;
+  color: var(--color-text);
+}
+
+p {
+  line-height: 1.7;
+}
+
+/* ── 4. GRADIENT ANIMATION ─────────────────────────────────── */
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-mid),
+    var(--gradient-end),
+    var(--gradient-mid),
+    var(--gradient-start)
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-shift 32s ease infinite;
+  display: inline;
+}
+
+/* ── 5. LAYOUT UTILITIES ───────────────────────────────────── */
+.site-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-main {
+  flex: 1;
+}
+
+/* Shared inner container — centers content with side padding */
+.nav-inner,
+.hero-inner,
+.section-inner,
+.list-hero-inner,
+.post-header-inner,
+.post-body,
+.post-footer-inner,
+.footer-inner {
+  max-width: var(--max-width-site);
+  margin-inline: auto;
+  padding-inline: var(--space-xl);
+}
+
+/* Prose width capped narrower for readability */
+.post-content {
+  max-width: var(--max-width-content);
+}
+
+/* ── 6. NAV ────────────────────────────────────────────────── */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+}
+
+.nav-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xl);
+}
+
+.nav-logo {
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.nav-logo-text {
+  font-family: var(--font-family);
+  font-weight: var(--weight-semibold);
+  font-size: 1.25rem;
+  letter-spacing: 0.15em;
+  color: var(--color-text);
+  text-transform: uppercase;
+  transition: color var(--transition-fast);
+}
+
+.nav-logo:hover .nav-logo-text {
+  color: var(--color-accent);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  font-weight: var(--weight-medium);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color var(--transition-fast);
+  padding-block: var(--space-xs);
+}
+
+.nav-link:hover {
+  color: var(--color-text);
+  opacity: 1;
+}
+
+.nav-link--active {
+  color: var(--color-accent);
+  opacity: 1;
+}
+
+/* ── 7. HERO ───────────────────────────────────────────────── */
+.hero {
+  padding-block: var(--space-4xl) var(--space-3xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hero-heading {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: var(--weight-black);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-block: var(--space-md) var(--space-xl);
+}
+
+.hero-body {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  max-width: 48ch;
+  margin-bottom: var(--space-2xl);
+  line-height: 1.7;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background-color: var(--color-accent);
+  color: var(--color-surface);
+  font-weight: var(--weight-semibold);
+  font-size: 0.9375rem;
+  padding: var(--space-sm) var(--space-xl);
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.cta-button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* ── 8. EYEBROW LABEL (shared) ─────────────────────────────── */
+.eyebrow-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+}
+
+/* ── 9. SECTION / POSTS GRID ───────────────────────────────── */
+.posts-section {
+  padding-block: var(--space-3xl);
+}
+
+.section-header {
+  margin-bottom: var(--space-2xl);
+}
+
+.section-heading {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: var(--weight-black);
+  line-height: 1.2;
+  margin-top: var(--space-xs);
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-xl);
+}
+
+.section-footer {
+  margin-top: var(--space-2xl);
+  text-align: center;
+}
+
+.view-all-link {
+  font-weight: var(--weight-medium);
+  font-size: 0.9375rem;
+  color: var(--color-accent);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: opacity var(--transition-fast);
+}
+
+.view-all-link:hover {
+  opacity: 0.75;
+}
+
+/* ── 10. POST CARD ─────────────────────────────────────────── */
+.post-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--transition-base), transform var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.post-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.post-card-inner {
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  height: 100%;
+}
+
+.post-card-eyebrow {
+  margin-bottom: calc(var(--space-xs) * -1);
+}
+
+.post-card-title {
+  font-size: 1.25rem;
+  font-weight: var(--weight-black);
+  line-height: 1.25;
+  margin: 0;
+}
+
+.post-card-link {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.post-card-link:hover {
+  color: var(--color-accent);
+  opacity: 1;
+}
+
+.post-card-summary {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.post-card-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  font-weight: var(--weight-medium);
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.post-card-sep {
+  color: var(--color-border);
+}
+
+.post-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+/* ── 11. LIST PAGE ─────────────────────────────────────────── */
+.list-hero {
+  padding-block: var(--space-3xl) var(--space-2xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.list-heading {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: var(--weight-black);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-top: var(--space-md);
+}
+
+.list-description {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin-top: var(--space-lg);
+  max-width: 52ch;
+  line-height: 1.7;
+}
+
+.empty-state {
+  color: var(--color-text-muted);
+  text-align: center;
+  padding-block: var(--space-3xl);
+  font-size: 1rem;
+}
+
+/* ── 12. SINGLE POST ───────────────────────────────────────── */
+.post-single {
+  padding-bottom: var(--space-4xl);
+}
+
+.post-header {
+  padding-block: var(--space-3xl) var(--space-2xl);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-3xl);
+}
+
+.post-title {
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  font-weight: var(--weight-black);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-block: var(--space-md) var(--space-lg);
+}
+
+.post-description {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  max-width: 60ch;
+  margin-bottom: var(--space-xl);
+}
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  font-weight: var(--weight-medium);
+  flex-wrap: wrap;
+}
+
+.post-meta-sep {
+  color: var(--color-border);
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+
+/* Post body centering wrapper */
+.post-body {
+  max-width: var(--max-width-site);
+  margin-inline: auto;
+  padding-inline: var(--space-xl);
+}
+
+/* Prose styles for rendered Markdown */
+.post-content {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+.post-content h2 {
+  font-size: 1.75rem;
+  font-weight: var(--weight-black);
+  margin-top: var(--space-3xl);
+  margin-bottom: var(--space-lg);
+  line-height: 1.2;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-sm);
+}
+
+.post-content h3 {
+  font-size: 1.25rem;
+  font-weight: var(--weight-bold);
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-md);
+  line-height: 1.3;
+}
+
+.post-content p {
+  margin-bottom: var(--space-lg);
+}
+
+.post-content p:last-child {
+  margin-bottom: 0;
+}
+
+.post-content a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.post-content a:hover {
+  opacity: 0.8;
+}
+
+.post-content ul,
+.post-content ol {
+  margin-bottom: var(--space-lg);
+  padding-left: var(--space-xl);
+}
+
+.post-content li {
+  margin-bottom: var(--space-sm);
+  line-height: 1.7;
+}
+
+.post-content blockquote {
+  border-left: 3px solid var(--color-accent);
+  padding-left: var(--space-lg);
+  margin-block: var(--space-xl);
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.post-content strong {
+  font-weight: var(--weight-semibold);
+  color: var(--color-text);
+}
+
+.post-content em {
+  font-style: italic;
+}
+
+.post-content hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin-block: var(--space-2xl);
+}
+
+/* Inline code */
+.post-content code {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+  font-size: 0.875em;
+  background-color: var(--color-surface);
+  color: var(--color-accent);
+  padding: 0.15em 0.4em;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+/* Code blocks */
+.post-content pre {
+  background-color: var(--color-surface) !important;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  overflow-x: auto;
+  margin-block: var(--space-xl);
+}
+
+.post-content pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.875rem;
+  color: var(--color-text);
+  border-radius: 0;
+}
+
+/* Hugo Chroma highlight wrapper */
+.post-content .highlight {
+  margin-block: var(--space-xl);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.post-content .highlight pre {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+}
+
+/* Post footer */
+.post-footer {
+  margin-top: var(--space-3xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.post-back-link {
+  font-size: 0.9375rem;
+  font-weight: var(--weight-medium);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.post-back-link:hover {
+  color: var(--color-accent);
+  opacity: 1;
+}
+
+/* ── 13. PAGINATION ────────────────────────────────────────── */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  margin-top: var(--space-3xl);
+  padding-top: var(--space-2xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.pagination-link {
+  font-weight: var(--weight-medium);
+  font-size: 0.9375rem;
+  color: var(--color-accent);
+  text-decoration: none;
+  padding: var(--space-sm) var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.pagination-link:hover {
+  border-color: var(--color-accent);
+  background-color: var(--color-bg);
+  opacity: 1;
+}
+
+.pagination-info {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  font-weight: var(--weight-medium);
+}
+
+/* ── 14. FOOTER ────────────────────────────────────────────── */
+.site-footer {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-2xl);
+  margin-top: auto;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  font-weight: var(--weight-semibold);
+  font-size: 1.125rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.footer-tagline {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.footer-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.footer-copy {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.footer-link {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-weight: var(--weight-medium);
+  transition: color var(--transition-fast);
+}
+
+.footer-link:hover {
+  color: var(--color-accent);
+  opacity: 1;
+}
+
+/* ── 15. TAG PILLS ─────────────────────────────────────────── */
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.02em;
+  color: var(--color-text-muted);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 0.2em 0.75em;
+  text-decoration: none;
+  line-height: 1.5;
+  transition:
+    color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.tag-pill:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  opacity: 1;
+}
+
+/* ── 16. RESPONSIVE ────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-heading {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .list-heading {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+  }
+
+  .post-title {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-lg);
+  }
+
+  .nav-inner,
+  .hero-inner,
+  .section-inner,
+  .list-hero-inner,
+  .post-header-inner,
+  .post-body,
+  .post-footer-inner,
+  .footer-inner {
+    padding-inline: var(--space-lg);
+  }
+
+  .post-header {
+    padding-block: var(--space-2xl) var(--space-xl);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .hero {
+    padding-block: var(--space-3xl) var(--space-2xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    gap: var(--space-md);
+  }
+
+  .nav-link {
+    font-size: 0.8125rem;
+  }
+
+  .post-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+  }
+
+  .post-meta-sep {
+    display: none;
+  }
+
+  .pagination {
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .hero-body {
+    font-size: 1rem;
+  }
+}

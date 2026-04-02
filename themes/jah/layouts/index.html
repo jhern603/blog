@@ -1,0 +1,40 @@
+{{ define "main" }}
+
+{{/* ── HERO ──────────────────────────────────────────────────── */}}
+<section class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow-label">Engineering Blog</p>
+    <h1 class="hero-heading">
+      Write code.<br>
+      <span class="gradient-text">Ship things.</span><br>
+      Explain both.
+    </h1>
+    <p class="hero-body">{{ .Site.Params.tagline }}</p>
+    <a href="{{ "/posts/" | relURL }}" class="cta-button">Read the posts</a>
+  </div>
+</section>
+
+{{/* ── RECENT POSTS ────────────────────────────────────────── */}}
+{{ $posts := where .Site.RegularPages "Section" "posts" }}
+{{ if gt (len $posts) 0 }}
+<section class="posts-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="eyebrow-label">Latest</p>
+      <h2 class="section-heading">Recent Posts</h2>
+    </div>
+    <div class="posts-grid">
+      {{ range first 6 $posts }}
+        {{ partial "post-card.html" . }}
+      {{ end }}
+    </div>
+    {{ if gt (len $posts) 6 }}
+    <div class="section-footer">
+      <a href="{{ "/posts/" | relURL }}" class="view-all-link">View all posts &rarr;</a>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+{{ end }}

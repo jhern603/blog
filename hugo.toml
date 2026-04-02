@@ -1,0 +1,25 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'JAH'
+theme = 'jah'
+
+[params]
+  author        = 'J.A. Hernandez'
+  description   = 'Engineering. Architecture. Craft.'
+  tagline       = 'Engineering done right. Written down.'
+  githubHandle  = ''
+  twitterHandle = ''
+
+[taxonomies]
+  tag      = 'tags'
+  category = 'categories'
+
+[pagination]
+  pagerSize = 9
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.highlight]
+    style     = 'dracula'
+    noClasses = false

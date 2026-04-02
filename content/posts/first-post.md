@@ -1,0 +1,62 @@
+---
+title: "I Built a Blog. Here's Why That's the Hard Part."
+date: 2026-04-02T00:00:00-06:00
+draft: false
+description: "Building in public starts with building the place to be public in. Here's what went into designing this blog and why the decisions matter."
+tags: ["meta", "engineering", "ai-generated"]
+categories: ["Engineering"]
+gradientWord: "Hard"
+---
+
+Every engineer has notes. Drafts in Notion. Threads that never got posted. Slack messages that could have been blog posts.
+
+I had all of that. What I didn't have was a place to put it.
+
+So I built one.
+
+## The Decision to Build, Not Use
+
+Ghost, Substack, Medium — they all work. Millions of people publish on them every week. But I wanted a few things none of them offer without compromise:
+
+- Full control over the HTML and CSS
+- No JavaScript runtime on the reader's machine
+- A design system that reflects how I actually think about interfaces
+- Zero monthly cost at any traffic level
+
+Hugo solves all four. It's a static site generator that produces flat files. No server, no database, no runtime. You ship HTML.
+
+The tradeoff: you build the theme yourself.
+
+## The Design System
+
+The brand starts with a constraint: dark navy is the canvas. No light backgrounds. No white cards floating on gray. The palette has five values — background, surface, border, primary text, muted text — and one accent color that does the heavy lifting.
+
+The gradient is the spotlight. One word per heading. The animation runs at 32 seconds — long enough that it reads as ambient light, not animation. Fast animations signal impatience. This one signals permanence.
+
+Inter handles all the type. 900 weight for display headings. 400 for body. The gap between those two creates hierarchy without needing size differences to do all the work.
+
+## Static Generation Is an Architectural Decision
+
+Choosing Hugo is not just a tooling choice. It's a statement about where complexity belongs.
+
+Complexity belongs in the build, not the runtime. A reader loading a post should receive a file, not execute a program. The 30ms difference between a CDN hit and a JavaScript hydration cycle sounds trivial. At scale, across thousands of readers, across three years of posts, it compounds.
+
+Speed is a design feature. Reliability is a design feature. A site that never goes down because there is no server to go down is a meaningful engineering choice.
+
+## What Gets Built Here
+
+This blog covers three things:
+
+**Systems design.** Not whiteboard theory — real decisions made under real constraints. What to cache and why. When to reach for a queue. How to think about failure modes before they become incidents.
+
+**Engineering craft.** Code review patterns. Documentation as communication. The difference between code that works and code that the next engineer can reason about in six months.
+
+**Career and growth.** Senior engineering is 30% code. The rest is judgment, communication, and knowing which problems are worth solving. That part rarely gets written down.
+
+## Start Somewhere Concrete
+
+The hardest part of writing is the blank page. The second hardest part is the blank page with a working CMS and no excuses.
+
+This post exists to solve that problem. One post published is worth more than forty posts drafted. The blog is live. The system works. The next post is about the system.
+
+Ship it.

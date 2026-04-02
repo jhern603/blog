@@ -1,0 +1,71 @@
+{{ define "main" }}
+
+<article class="post-single">
+
+  {{/* ── POST HEADER ─────────────────────────────────────── */}}
+  <header class="post-header">
+    <div class="post-header-inner">
+
+      {{- with .Params.categories }}
+        <p class="eyebrow-label">
+          {{- range first 1 . }}{{ . }}{{ end -}}
+        </p>
+      {{- end }}
+
+      <h1 class="post-title">
+        {{- $gradientWord := .Params.gradientWord -}}
+        {{- if $gradientWord -}}
+          {{- $title := .Title -}}
+          {{- $parts := split $title $gradientWord -}}
+          {{- index $parts 0 -}}<span class="gradient-text">{{ $gradientWord }}</span>{{- strings.TrimPrefix (printf "%s%s" (index $parts 0) $gradientWord) $title -}}
+        {{- else -}}
+          {{ .Title }}
+        {{- end -}}
+      </h1>
+
+      {{- with .Description }}
+        <p class="post-description">{{ . }}</p>
+      {{- end }}
+
+      <div class="post-meta">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">
+          {{ .Date.Format "January 2, 2006" }}
+        </time>
+        <span class="post-meta-sep">&middot;</span>
+        <span>{{ .ReadingTime }} min read</span>
+        <span class="post-meta-sep">&middot;</span>
+        <span>{{ .WordCount }} words</span>
+        {{ with .Site.Params.author }}
+          <span class="post-meta-sep">&middot;</span>
+          <span>{{ . }}</span>
+        {{ end }}
+      </div>
+
+      {{- with .Params.tags }}
+        <div class="post-tags">
+          {{- range . }}
+            <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag-pill">{{ . }}</a>
+          {{- end }}
+        </div>
+      {{- end }}
+
+    </div>
+  </header>
+
+  {{/* ── POST BODY ────────────────────────────────────────── */}}
+  <div class="post-body">
+    <div class="post-content">
+      {{ .Content }}
+    </div>
+  </div>
+
+  {{/* ── POST FOOTER ──────────────────────────────────────── */}}
+  <footer class="post-footer">
+    <div class="post-footer-inner">
+      <a href="{{ "/posts/" | relURL }}" class="post-back-link">&larr; Back to all posts</a>
+    </div>
+  </footer>
+
+</article>
+
+{{ end }}

@@ -1,0 +1,20 @@
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="{{ "/" | relURL }}" class="nav-logo" aria-label="{{ .Site.Title }} home">
+      <span class="nav-logo-text">JAH</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="{{ "/" | relURL }}"
+         class="nav-link{{ if .IsHome }} nav-link--active{{ end }}">
+        Home
+      </a>
+      <a href="{{ "/posts/" | relURL }}"
+         class="nav-link{{ if eq .Section "posts" }} nav-link--active{{ end }}">
+        Posts
+      </a>
+      <a href="{{ "/tags/" | relURL }}" class="nav-link">
+        Tags
+      </a>
+    </nav>
+  </div>
+</header>

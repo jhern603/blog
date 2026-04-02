@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>I Built a Blog. Here&#39;s Why That&#39;s the Hard Part. — JAH</title>
+  <meta name="description" content="Building in public starts with building the place to be public in. Here&#39;s what went into designing this blog and why the decisions matter.">
+
+<meta name="author" content="J.A. Hernandez">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="I Built a Blog. Here&#39;s Why That&#39;s the Hard Part.">
+  <meta property="og:description" content="Building in public starts with building the place to be public in. Here&#39;s what went into designing this blog and why the decisions matter.">
+  <meta property="og:url" content="http://localhost:1313/posts/first-post/">
+    <meta property="article:published_time" content="2026-04-02T00:00:00-06:00">
+
+<link rel="canonical" href="http://localhost:1313/posts/first-post/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+</head>
+<body class="site-body">
+
+  <header class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="JAH home">
+      <span class="nav-logo-text">JAH</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="/"
+         class="nav-link">
+        Home
+      </a>
+      <a href="/posts/"
+         class="nav-link nav-link--active">
+        Posts
+      </a>
+      <a href="/tags/" class="nav-link">
+        Tags
+      </a>
+    </nav>
+  </div>
+</header>
+
+
+  <main class="site-main" id="main-content">
+
+<article class="post-single">
+
+  
+  <header class="post-header">
+    <div class="post-header-inner">
+        <p class="eyebrow-label">Engineering</p>
+
+      <h1 class="post-title">I Built a Blog. Here&#39;s Why That&#39;s the <span class="gradient-text">Hard</span> Part.</h1>
+        <p class="post-description">Building in public starts with building the place to be public in. Here&#39;s what went into designing this blog and why the decisions matter.</p>
+
+      <div class="post-meta">
+        <time datetime="2026-04-02">
+          April 2, 2026
+        </time>
+        <span class="post-meta-sep">&middot;</span>
+        <span>3 min read</span>
+        <span class="post-meta-sep">&middot;</span>
+        <span>494 words</span>
+        
+          <span class="post-meta-sep">&middot;</span>
+          <span>J.A. Hernandez</span>
+        
+      </div>
+        <div class="post-tags">
+            <a href="/tags/meta/" class="tag-pill">meta</a>
+            <a href="/tags/engineering/" class="tag-pill">engineering</a>
+            <a href="/tags/ai-generated/" class="tag-pill">ai-generated</a>
+        </div>
+
+    </div>
+  </header>
+
+  
+  <div class="post-body">
+    <div class="post-content">
+      <p>Every engineer has notes. Drafts in Notion. Threads that never got posted. Slack messages that could have been blog posts.</p>
+<p>I had all of that. What I didn&rsquo;t have was a place to put it.</p>
+<p>So I built one.</p>
+<h2 id="the-decision-to-build-not-use">The Decision to Build, Not Use</h2>
+<p>Ghost, Substack, Medium — they all work. Millions of people publish on them every week. But I wanted a few things none of them offer without compromise:</p>
+<ul>
+<li>Full control over the HTML and CSS</li>
+<li>No JavaScript runtime on the reader&rsquo;s machine</li>
+<li>A design system that reflects how I actually think about interfaces</li>
+<li>Zero monthly cost at any traffic level</li>
+</ul>
+<p>Hugo solves all four. It&rsquo;s a static site generator that produces flat files. No server, no database, no runtime. You ship HTML.</p>
+<p>The tradeoff: you build the theme yourself.</p>
+<h2 id="the-design-system">The Design System</h2>
+<p>The brand starts with a constraint: dark navy is the canvas. No light backgrounds. No white cards floating on gray. The palette has five values — background, surface, border, primary text, muted text — and one accent color that does the heavy lifting.</p>
+<p>The gradient is the spotlight. One word per heading. The animation runs at 32 seconds — long enough that it reads as ambient light, not animation. Fast animations signal impatience. This one signals permanence.</p>
+<p>Inter handles all the type. 900 weight for display headings. 400 for body. The gap between those two creates hierarchy without needing size differences to do all the work.</p>
+<h2 id="static-generation-is-an-architectural-decision">Static Generation Is an Architectural Decision</h2>
+<p>Choosing Hugo is not just a tooling choice. It&rsquo;s a statement about where complexity belongs.</p>
+<p>Complexity belongs in the build, not the runtime. A reader loading a post should receive a file, not execute a program. The 30ms difference between a CDN hit and a JavaScript hydration cycle sounds trivial. At scale, across thousands of readers, across three years of posts, it compounds.</p>
+<p>Speed is a design feature. Reliability is a design feature. A site that never goes down because there is no server to go down is a meaningful engineering choice.</p>
+<h2 id="what-gets-built-here">What Gets Built Here</h2>
+<p>This blog covers three things:</p>
+<p><strong>Systems design.</strong> Not whiteboard theory — real decisions made under real constraints. What to cache and why. When to reach for a queue. How to think about failure modes before they become incidents.</p>
+<p><strong>Engineering craft.</strong> Code review patterns. Documentation as communication. The difference between code that works and code that the next engineer can reason about in six months.</p>
+<p><strong>Career and growth.</strong> Senior engineering is 30% code. The rest is judgment, communication, and knowing which problems are worth solving. That part rarely gets written down.</p>
+<h2 id="start-somewhere-concrete">Start Somewhere Concrete</h2>
+<p>The hardest part of writing is the blank page. The second hardest part is the blank page with a working CMS and no excuses.</p>
+<p>This post exists to solve that problem. One post published is worth more than forty posts drafted. The blog is live. The system works. The next post is about the system.</p>
+<p>Ship it.</p>
+
+    </div>
+  </div>
+
+  
+  <footer class="post-footer">
+    <div class="post-footer-inner">
+      <a href="/posts/" class="post-back-link">&larr; Back to all posts</a>
+    </div>
+  </footer>
+
+</article>
+
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-logo">JAH</span>
+      <p class="footer-tagline">Engineering done right. Written down.</p>
+    </div>
+    <div class="footer-meta">
+      <p class="footer-copy">
+        &copy; 2026 J.A. Hernandez.
+        Built with <a href="https://gohugo.io" class="footer-link" target="_blank" rel="noopener">Hugo</a>.
+      </p>
+      
+      
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
