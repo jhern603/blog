@@ -1,7 +1,7 @@
 baseURL = 'https://blog.josehernandez.dev/'
 languageCode = 'en-us'
 title = 'Jose Hernandez'
-theme = 'Jose Hernandez'
+theme = 'jah'
 
 [params]
   author        = 'Jose Hernandez'
