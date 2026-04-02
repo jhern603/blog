@@ -740,7 +740,33 @@ p {
   opacity: 1;
 }
 
-/* ── 16. RESPONSIVE ────────────────────────────────────────── */
+/* ── 16. SYNTAX HIGHLIGHTING ───────────────────────────────── */
+/* syntax.css supplies all token colors; only override the background
+   so it matches the brand surface instead of Dracula's #282a36      */
+.post-content .chroma {
+  background-color: var(--color-surface) !important;
+  color: #f8f8f2; /* Dracula foreground — keep readable on our bg */
+}
+
+/* ── 17. MERMAID DIAGRAMS ──────────────────────────────────── */
+.post-content pre.mermaid {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  margin-block: var(--space-xl);
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+/* Mermaid injects an <svg> — make it responsive */
+.post-content pre.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── 17. RESPONSIVE ────────────────────────────────────────── */
 @media (max-width: 768px) {
   .posts-grid {
     grid-template-columns: 1fr;
