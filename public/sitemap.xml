@@ -14,9 +14,6 @@
     <loc>http://localhost:1313/tags/engineering/</loc>
     <lastmod>2026-04-02T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/hugo/</loc>
-    <lastmod>2026-04-02T00:00:00-06:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/first-post/</loc>
     <lastmod>2026-04-02T00:00:00-06:00</lastmod>
   </url><url>
@@ -32,7 +29,16 @@
     <loc>http://localhost:1313/tags/</loc>
     <lastmod>2026-04-02T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/writing/</loc>
-    <lastmod>2026-04-02T00:00:00-06:00</lastmod>
+    <loc>http://localhost:1313/categories/cloud-engineering/</loc>
+    <lastmod>2023-07-07T20:44:10-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/cloud-development/</loc>
+    <lastmod>2023-07-07T20:44:10-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/cloud-models/</loc>
+    <lastmod>2023-07-07T20:44:10-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/tips/</loc>
+    <lastmod>2023-07-07T20:44:10-05:00</lastmod>
   </url>
 </urlset>

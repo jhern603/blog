@@ -15,5 +15,12 @@
       <guid>http://localhost:1313/categories/engineering/</guid>
       <description></description>
     </item>
+    <item>
+      <title>Cloud Engineering</title>
+      <link>http://localhost:1313/categories/cloud-engineering/</link>
+      <pubDate>Fri, 07 Jul 2023 20:44:10 -0500</pubDate>
+      <guid>http://localhost:1313/categories/cloud-engineering/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
