@@ -1,5 +1,5 @@
 /* ============================================================
-   JAH Blog — main.css
+   Jose Hernandez Blog — main.css
    Dark navy palette · Inter typeface · Animated gradient accent
    ============================================================ */
 
@@ -194,10 +194,9 @@ p {
 .nav-logo-text {
   font-family: var(--font-family);
   font-weight: var(--weight-semibold);
-  font-size: 1.25rem;
-  letter-spacing: 0.15em;
+  font-size: 1.125rem;
+  letter-spacing: 0.01em;
   color: var(--color-text);
-  text-transform: uppercase;
   transition: color var(--transition-fast);
 }
 
@@ -677,9 +676,8 @@ p {
 
 .footer-logo {
   font-weight: var(--weight-semibold);
-  font-size: 1.125rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
   color: var(--color-text);
   display: block;
   margin-bottom: var(--space-xs);

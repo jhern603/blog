@@ -1,7 +1,7 @@
 ---
 title: "The Three Service Models in the Cloud"
 date: 2023-07-07T20:44:10-05:00
-draft: true
+draft: false
 tags: ['cloud-development', 'tips']
 categories: ["Cloud Engineering"]
 gradientWord: "Cloud"
