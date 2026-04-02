@@ -2,43 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/ai-generated/</loc>
+    <loc>/tags/ai-generated/</loc>
     <lastmod>2026-04-02T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>/categories/</loc>
     <lastmod>2026-04-02T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/engineering/</loc>
+    <loc>/categories/engineering/</loc>
     <lastmod>2026-04-02T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/engineering/</loc>
+    <loc>/tags/engineering/</loc>
     <lastmod>2026-04-02T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/first-post/</loc>
+    <loc>/posts/first-post/</loc>
     <lastmod>2026-04-02T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>/</loc>
     <lastmod>2026-04-02T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/meta/</loc>
+    <loc>/tags/meta/</loc>
     <lastmod>2026-04-02T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>/posts/</loc>
     <lastmod>2026-04-02T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2026-04-02T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/cloud-engineering/</loc>
+    <loc>/categories/cloud-engineering/</loc>
     <lastmod>2023-07-07T20:44:10-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cloud-development/</loc>
+    <loc>/tags/cloud-development/</loc>
     <lastmod>2023-07-07T20:44:10-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/cloud-models/</loc>
+    <loc>/posts/cloud-models/</loc>
     <lastmod>2023-07-07T20:44:10-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/tips/</loc>
+    <loc>/tags/tips/</loc>
     <lastmod>2023-07-07T20:44:10-05:00</lastmod>
   </url>
 </urlset>
