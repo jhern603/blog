@@ -16,6 +16,11 @@
   {{- if .Store.Get "hasMermaid" }}
   <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    // Hugo HTML-encodes content inside pre elements (e.g. --> becomes --&gt;).
+    // Mermaid reads innerHTML, so we normalize to plain text first.
+    document.querySelectorAll('pre.mermaid').forEach(el => {
+      el.textContent = el.textContent;
+    });
     mermaid.initialize({
       startOnLoad: true,
       theme: 'base',

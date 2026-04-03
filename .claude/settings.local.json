@@ -9,7 +9,8 @@
       "Bash(\"C:\\\\Users\\\\JHern\\\\Documents\\\\code_bases\\\\blogs\\\\.gitignore\":*)",
       "Bash(powershell -Command \"hugo gen chromastyles --style=dracula\")",
       "Bash(powershell -Command \"hugo gen chromastyles --style=dracula | Out-File -Encoding utf8 themes/jah/static/css/syntax.css\")",
-      "Bash(powershell -Command \"Get-Item ''C:\\\\Users\\\\JHern\\\\Documents\\\\code_bases\\\\blogs\\\\themes\\\\jah\\\\static\\\\css\\\\syntax.css'' | Select-Object Length; Get-Content ''C:\\\\Users\\\\JHern\\\\Documents\\\\code_bases\\\\blogs\\\\themes\\\\jah\\\\static\\\\css\\\\syntax.css'' | Measure-Object -Line\")"
+      "Bash(powershell -Command \"Get-Item ''C:\\\\Users\\\\JHern\\\\Documents\\\\code_bases\\\\blogs\\\\themes\\\\jah\\\\static\\\\css\\\\syntax.css'' | Select-Object Length; Get-Content ''C:\\\\Users\\\\JHern\\\\Documents\\\\code_bases\\\\blogs\\\\themes\\\\jah\\\\static\\\\css\\\\syntax.css'' | Measure-Object -Line\")",
+      "WebFetch(domain:blog.josehernandez.dev)"
     ]
   }
 }
