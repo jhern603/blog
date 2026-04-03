@@ -17,12 +17,12 @@
   <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
     // Hugo HTML-encodes content inside pre elements (e.g. --> becomes --&gt;).
-    // Mermaid reads innerHTML, so we normalize to plain text first.
+    // Read decoded textContent and write back as innerHTML so mermaid gets raw syntax.
     document.querySelectorAll('pre.mermaid').forEach(el => {
-      el.textContent = el.textContent;
+      el.innerHTML = el.textContent;
     });
     mermaid.initialize({
-      startOnLoad: true,
+      startOnLoad: false,
       theme: 'base',
       themeVariables: {
         background:          '#1C2D3E',
@@ -42,6 +42,7 @@
         activeTaskBkgColor:    '#2A7BA0',
       }
     });
+    mermaid.run({ querySelector: 'pre.mermaid' });
   </script>
   {{- end }}
 
