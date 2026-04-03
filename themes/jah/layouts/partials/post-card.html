@@ -38,13 +38,6 @@
       <span class="post-card-reading-time">{{ .ReadingTime }} min read</span>
     </div>
 
-    {{- with .Params.tags }}
-      <div class="post-card-tags">
-        {{- range first 3 . }}
-          <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag-pill">{{ . }}</a>
-        {{- end }}
-      </div>
-    {{- end }}
 
   </div>
 </article>

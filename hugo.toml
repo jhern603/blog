@@ -6,9 +6,9 @@ theme = 'jah'
 [params]
   author        = 'Jose Hernandez'
   description   = 'Engineering. Architecture. Craft.'
-  tagline       = 'Engineering done right. Written down.'
-  githubHandle  = ''
-  twitterHandle = ''
+  tagline       = 'Engineering written down.'
+  githubHandle  = 'jhern603'
+  linkeInHandle = 'jhern603'
 
 [taxonomies]
   tag      = 'tags'
