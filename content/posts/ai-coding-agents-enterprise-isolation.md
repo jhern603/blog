@@ -1,6 +1,6 @@
 ---
 title: "Deploying AI Coding Agents: Ensuring a Safe Operating Environment for AI-Driven Development"
-date: 2026-04-03T14:00:00-06:00
+date: 2026-04-03T00:00:00-06:00
 draft: false
 description: "AI Agents ship features fast. They also read all your sernsitive files, run shell commands, and make network requests at machine speed. A structured analysis of three isolation architectures and the role of human oversight."
 tags: ["security", "Agentic AI", "Docker", "Kubernetes", "devops", "architecture"]
