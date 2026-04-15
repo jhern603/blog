@@ -6,8 +6,22 @@
     <description>Recent content on Jose Hernandez</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Apr 2026 00:00:00 -0600</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NVIDIA OpenShell: Run Your AI Agents in a Sandbox</title>
+      <link>http://localhost:1313/posts/run-agents-with-nvidia/</link>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/run-agents-with-nvidia/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;OpenShell is currently alpha software. APIs and behavior may change without notice.&lt;/em&gt;&#xA;Learn more about OpenShell by visiting &lt;a href=&#34;https://github.com/NVIDIA/OpenShell&#34;&gt;the Github Repo&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;AI agents read your files, execute shell commands, install packages, and make network requests autonomously, at machine speed. Most people are running agents directly on their workstations or servers, with the same access as a privileged user and almost no audit trail.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;NVIDIA&amp;rsquo;s OpenShell&lt;/strong&gt; is a runtime layer that sits between your agent and your infrastructure, and I think it is a step in the right direction since it addresses &lt;strong&gt;how agents should be run as a matter of course.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Deploying AI Coding Agents: Ensuring a Safe Operating Environment for AI-Driven Development</title>
+      <link>http://localhost:1313/posts/ai-coding-agents-enterprise-isolation/</link>
+      <pubDate>Fri, 03 Apr 2026 00:00:00 -0600</pubDate>
+      <guid>http://localhost:1313/posts/ai-coding-agents-enterprise-isolation/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;This post is intended as a starting point for security and architecture discussions when deploying agentic applications. Specific implementation details will vary based on existing infrastructure, compliance requirements, and risk tolerance. Engage your security team and, where regulated data is involved, legal counsel before deploying AI coding agents in production environments.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#1-summary&#34;&gt;Summary&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#2-introduction&#34;&gt;Introduction&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#3-the-problem-space&#34;&gt;The Problem Space&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#4-key-risk-categories&#34;&gt;Key Risk Categories&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#5-human-in-the-loop&#34;&gt;Human in the Loop&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#6-isolation-strategies&#34;&gt;Isolation Strategies&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#7-comparative-analysis&#34;&gt;Comparative Analysis&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#8-recommendations&#34;&gt;Recommendations&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#9-conclusion&#34;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#10-glossary&#34;&gt;Glossary&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-summary&#34;&gt;1. Summary&lt;/h2&gt;&#xA;&lt;p&gt;AI coding agents such as OpenAI&amp;rsquo;s Codex and Anthropic&amp;rsquo;s Claude Code represent a new category of software tool: autonomous systems capable of reading, writing, and executing code on behalf of a developer. While the productivity gains are real and measurable, deploying these agents at scale introduces a class of risks that traditional teams and individuals are not equipped to evaluate.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>I Built a Blog. Here&#39;s Why That&#39;s the Hard Part.</title>
       <link>http://localhost:1313/posts/first-post/</link>
