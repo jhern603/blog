@@ -1,6 +1,7 @@
 ---
 title: "The Three Service Models in the Cloud"
 date: 2023-07-07T20:44:10-05:00
+description: "A developer's high-level guide to the cloud's three core service models, IaaS, PaaS, and SaaS, and how to choose between them."
 draft: false
 tags: ['cloud-development', 'tips']
 categories: ["Cloud Engineering"]

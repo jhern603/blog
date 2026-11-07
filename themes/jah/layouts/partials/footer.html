@@ -7,13 +7,13 @@
     <div class="footer-meta">
       <p class="footer-copy">
         &copy; {{ now.Format "2006" }} {{ .Site.Params.author }}.
-        Built with <a href="https://gohugo.io" class="footer-link" target="_blank" rel="noopener">Hugo</a>.
+        Built with <a href="https://gohugo.io" class="footer-link" target="_blank" rel="noopener">Hugo<span class="visually-hidden"> (opens in a new tab)</span></a>.
       </p>
       {{ with .Site.Params.githubHandle }}
-        <a href="https://github.com/{{ . }}" class="footer-link" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/{{ . }}" class="footer-link" target="_blank" rel="noopener">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a>
       {{ end }}
       {{ with .Site.Params.linkeInHandle }}
-        <a href="https://linkedin.com/in/{{ . }}" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://linkedin.com/in/{{ . }}" class="footer-link" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a>
       {{ end }}
     </div>
   </div>

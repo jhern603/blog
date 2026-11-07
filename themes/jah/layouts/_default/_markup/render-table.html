@@ -1,11 +1,11 @@
-<div class="table-wrapper">
+<div class="table-wrapper" tabindex="0" role="group" aria-label="Scrollable table">
   <table>
     {{- if .THead }}
     <thead>
       {{- range .THead }}
       <tr>
         {{- range . }}
-        <th{{ with .Alignment }} style="text-align:{{ . }}"{{ end }}>{{ .Text }}</th>
+        <th scope="col"{{ with .Alignment }} style="text-align:{{ . }}"{{ end }}>{{ .Text }}</th>
         {{- end }}
       </tr>
       {{- end }}

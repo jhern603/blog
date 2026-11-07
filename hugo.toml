@@ -1,7 +1,9 @@
 baseURL = 'https://blog.josehernandez.dev/'
-languageCode = 'en-us'
+locale = 'en-US'
 title = 'Jose Hernandez'
 theme = 'jah'
+enableRobotsTXT = true
+enableGitInfo = true
 
 [params]
   author        = 'Jose Hernandez'
@@ -9,8 +11,7 @@ theme = 'jah'
   tagline       = 'Engineering written down.'
   githubHandle  = 'jhern603'
   linkeInHandle = 'jhern603'
-  ogImage       = '/og-image.svg'
-  twitterHandle = '@jhern603'
+  ogImage       = '/og-image.png'
 
 [taxonomies]
   tag      = 'tags'

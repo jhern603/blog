@@ -31,12 +31,12 @@
         <time datetime="{{ .Date.Format "2006-01-02" }}">
           {{ .Date.Format "January 2, 2006" }}
         </time>
-        <span class="post-meta-sep">&middot;</span>
+        <span class="post-meta-sep" aria-hidden="true">&middot;</span>
         <span>{{ .ReadingTime }} min read</span>
-        <span class="post-meta-sep">&middot;</span>
+        <span class="post-meta-sep" aria-hidden="true">&middot;</span>
         <span>{{ .WordCount }} words</span>
         {{ with .Site.Params.author }}
-          <span class="post-meta-sep">&middot;</span>
+          <span class="post-meta-sep" aria-hidden="true">&middot;</span>
           <span>{{ . }}</span>
         {{ end }}
       </div>

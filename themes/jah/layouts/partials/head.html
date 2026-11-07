@@ -1,61 +1,62 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+{{- $description := partial "page-description.html" . -}}
+{{- /* Paginated lists are canonical to themselves, not to their first page. */ -}}
+{{- $canonical := .Permalink -}}
+{{- $pageNumber := 1 -}}
+{{- if or (eq .Kind "section") (eq .Kind "term") -}}
+  {{- $canonical = .Paginator.URL | absURL -}}
+  {{- $pageNumber = .Paginator.PageNumber -}}
+{{- end -}}
+{{- $socialTitle := .Title -}}
+{{- if .IsHome }}{{ $socialTitle = .Site.Title }}{{ end -}}
+{{- $ogImageURL := .Site.Params.ogImage | absURL }}
 
 <title>
   {{- if .IsHome -}}
     {{ .Site.Title }} — {{ .Site.Params.description }}
   {{- else -}}
-    {{ .Title }} — {{ .Site.Title }}
+    {{ if eq .Kind "term" }}{{ .Data.Singular | humanize }}: {{ end }}{{ .Title }}{{ if gt $pageNumber 1 }} — Page {{ $pageNumber }}{{ end }} — {{ .Site.Title }}
   {{- end -}}
 </title>
-
-{{- with .Description }}
-  <meta name="description" content="{{ . }}">
-{{- else }}
-  <meta name="description" content="{{ $.Site.Params.description }}">
-{{- end }}
-
+<meta name="description" content="{{ $description }}">
 <meta name="author" content="{{ .Site.Params.author }}">
-<meta name="robots" content="index, follow">
-{{- $ogImage := .Site.Params.ogImage | default "/og-image.svg" -}}
-{{- $ogImageURL := printf "%s%s" .Site.BaseURL $ogImage -}}
-
-{{- if .IsPage }}
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="{{ .Title }}">
-  <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ $.Site.Params.description }}{{ end }}">
-  <meta property="og:url" content="{{ .Permalink }}">
-  <meta property="og:image" content="{{ $ogImageURL }}">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="{{ .Site.Title }}">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ .Title }}">
-  <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ $.Site.Params.description }}{{ end }}">
-  <meta name="twitter:image" content="{{ $ogImageURL }}">
-  {{- with .Date }}
-    <meta property="article:published_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
-  {{- end }}
+{{- if eq .Kind "404" }}
+<meta name="robots" content="noindex">
 {{- else }}
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="{{ .Site.Title }}">
-  <meta property="og:description" content="{{ .Site.Params.description }}">
-  <meta property="og:url" content="{{ .Site.BaseURL }}">
-  <meta property="og:image" content="{{ $ogImageURL }}">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="{{ .Site.Title }}">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ .Site.Title }}">
-  <meta name="twitter:description" content="{{ .Site.Params.description }}">
-  <meta name="twitter:image" content="{{ $ogImageURL }}">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="{{ $canonical }}">
 {{- end }}
-<meta name="twitter:site" content="{{ .Site.Params.twitterHandle | default "@jhern603" }}">
+
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:locale" content="{{ replace .Site.Language.Locale "-" "_" }}">
+<meta property="og:title" content="{{ $socialTitle }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ $canonical }}">
+<meta property="og:image" content="{{ $ogImageURL }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ .Site.Title }} — {{ .Site.Params.description }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $socialTitle }}">
+<meta name="twitter:description" content="{{ $description }}">
+<meta name="twitter:image" content="{{ $ogImageURL }}">
+<meta name="twitter:image:alt" content="{{ .Site.Title }} — {{ .Site.Params.description }}">
+{{- if .IsPage }}
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+<meta property="article:author" content="{{ .Site.Params.author }}">
+{{- with .Params.categories }}
+<meta property="article:section" content="{{ index . 0 }}">
+{{- end }}
+{{- range .Params.tags }}
+<meta property="article:tag" content="{{ . }}">
+{{- end }}
+{{- end }}
 <meta name="theme-color" content="#243448">
 
 <link rel="icon" type="image/svg+xml" href="{{ "/favicon.svg" | absURL }}">
-<link rel="canonical" href="{{ .Permalink }}">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,5 +66,9 @@
 <link rel="stylesheet" href="{{ "/css/syntax.css" | absURL }}">
 
 {{ range .AlternativeOutputFormats -}}
-  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}">
+  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title }}">
 {{ end -}}
+{{- if .IsPage }}{{ with .Site.Home.OutputFormats.Get "rss" -}}
+  <link rel="alternate" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title }}">
+{{ end }}{{ end -}}
+{{ partial "structured-data.html" . }}
