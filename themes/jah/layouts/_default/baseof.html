@@ -4,10 +4,11 @@
   {{ partial "head.html" . }}
 </head>
 <body class="site-body">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
   {{ partial "nav.html" . }}
 
-  <main class="site-main" id="main-content">
+  <main class="site-main" id="main-content" tabindex="-1">
     {{- block "main" . }}{{- end }}
   </main>
 

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Jose Hernandez</title>
+  <desc id="desc">Engineering. Architecture. Craft.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#1C2D3E"/>
+      <stop offset="50%" stop-color="#243448"/>
+      <stop offset="100%" stop-color="#0E1A2A"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#5BB8D4"/>
+      <stop offset="100%" stop-color="#2A7BA0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="80" y="80" width="1040" height="470" rx="24" fill="#162230" stroke="#3A5170"/>
+  <circle cx="170" cy="180" r="10" fill="#5BB8D4"/>
+  <circle cx="210" cy="180" r="10" fill="#7A95AB"/>
+  <circle cx="250" cy="180" r="10" fill="#7A95AB"/>
+  <rect x="130" y="230" width="220" height="12" rx="6" fill="#2A7BA0" opacity="0.9"/>
+  <rect x="130" y="268" width="320" height="12" rx="6" fill="#3A5170"/>
+  <rect x="130" y="306" width="280" height="12" rx="6" fill="#3A5170"/>
+  <text x="130" y="430" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800" fill="#E8EDF2">Jose Hernandez</text>
+  <text x="130" y="490" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="500" fill="#7A95AB" letter-spacing="4">ENGINEERING. ARCHITECTURE. CRAFT.</text>
+  <g transform="translate(780 120)">
+    <rect width="250" height="250" rx="18" fill="url(#accent)" opacity="0.18"/>
+    <path d="M60 180 L120 60 L180 180 Z" fill="#5BB8D4" opacity="0.85"/>
+    <path d="M110 190 L170 100 L220 190 Z" fill="#2A7BA0" opacity="0.75"/>
+    <circle cx="120" cy="70" r="20" fill="#E8EDF2" opacity="0.9"/>
+  </g>
+</svg>

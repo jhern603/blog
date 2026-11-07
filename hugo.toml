@@ -9,6 +9,8 @@ theme = 'jah'
   tagline       = 'Engineering written down.'
   githubHandle  = 'jhern603'
   linkeInHandle = 'jhern603'
+  ogImage       = '/og-image.svg'
+  twitterHandle = '@jhern603'
 
 [taxonomies]
   tag      = 'tags'
