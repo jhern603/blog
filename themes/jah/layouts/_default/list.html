@@ -2,11 +2,16 @@
 
 <section class="list-hero">
   <div class="list-hero-inner">
-    <p class="eyebrow-label">{{ .Title }}</p>
-    <h1 class="list-heading">
-      Every post.<br>
-      <span class="gradient-text">All the work.</span>
-    </h1>
+    {{ if eq .Kind "term" }}
+      <p class="eyebrow-label">{{ .Data.Singular | humanize }}</p>
+      <h1 class="list-heading">{{ .Title }}</h1>
+    {{ else }}
+      <p class="eyebrow-label">{{ .Title }}</p>
+      <h1 class="list-heading">
+        Every post.<br>
+        <span class="gradient-text">All the work.</span>
+      </h1>
+    {{ end }}
     {{ with .Description }}
       <p class="list-description">{{ . }}</p>
     {{ end }}
@@ -19,7 +24,7 @@
     {{ if gt (len $paginator.Pages) 0 }}
       <div class="posts-grid">
         {{ range $paginator.Pages }}
-          {{ partial "post-card.html" . }}
+          {{ partial "post-card.html" (dict "Page" .) }}
         {{ end }}
       </div>
       {{/* Pagination */}}

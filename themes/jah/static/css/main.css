@@ -10,13 +10,13 @@
   --color-surface:    #1C2D3E;
   --color-border:     #3A5170;
   --color-text:       #E8EDF2;
-  --color-text-muted: #7A95AB;
+  --color-text-muted: #93ABBF;
   --color-accent:     #5BB8D4;
 
   /* Gradient stops */
   --gradient-start:   #5BB8D4;
-  --gradient-mid:     #2A7BA0;
-  --gradient-end:     #1A6FA5;
+  --gradient-mid:     #46A0C4;
+  --gradient-end:     #3D93C4;
 
   /* Typography */
   --font-family:      'Inter', system-ui, -apple-system, sans-serif;
@@ -64,6 +64,7 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-height) + var(--space-md));
   -webkit-text-size-adjust: 100%;
 }
 
@@ -94,16 +95,34 @@ a:hover {
   opacity: 0.8;
 }
 
-a:focus-visible {
+:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
+}
+
+a:focus-visible {
   border-radius: var(--radius-sm);
+}
+
+/* <main> only takes focus programmatically, as the skip link's target */
+.site-main:focus {
+  outline: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .skip-link {
   position: absolute;
   left: var(--space-lg);
-  top: -3rem;
+  top: var(--space-md);
   z-index: 200;
   background: var(--color-surface);
   color: var(--color-text);
@@ -111,11 +130,14 @@ a:focus-visible {
   border-radius: var(--radius-sm);
   padding: 0.75rem 1rem;
   text-decoration: none;
-  transition: top var(--transition-fast);
+  /* Offset by the link's own height so it stays fully off-screen however
+     tall it is (text wrap, zoom, font fallback). */
+  transform: translateY(calc(-100% - var(--space-md) - 2px));
+  transition: transform var(--transition-fast);
 }
 
 .skip-link:focus {
-  top: var(--space-md);
+  transform: none;
 }
 
 /* ── 3. TYPOGRAPHY ─────────────────────────────────────────── */
@@ -191,7 +213,7 @@ p {
   z-index: 100;
   background-color: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
-  height: var(--nav-height);
+  min-height: var(--nav-height);
   display: flex;
   align-items: center;
 }
@@ -201,7 +223,8 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-xl);
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-xl);
 }
 
 .nav-logo {
@@ -236,7 +259,7 @@ p {
   text-decoration: none;
   letter-spacing: 0.02em;
   transition: color var(--transition-fast);
-  padding-block: var(--space-xs);
+  padding-block: var(--space-sm);
 }
 
 .nav-link:hover {
@@ -247,6 +270,9 @@ p {
 .nav-link--active {
   color: var(--color-accent);
   opacity: 1;
+  /* Don't signal the current page by color alone */
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 /* ── 7. HERO ───────────────────────────────────────────────── */
@@ -405,7 +431,7 @@ p {
 }
 
 .post-card-sep {
-  color: var(--color-border);
+  color: var(--color-text-muted);
 }
 
 .post-card-tags {
@@ -434,6 +460,19 @@ p {
   margin-top: var(--space-lg);
   max-width: 52ch;
   line-height: 1.7;
+}
+
+.term-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.term-list .tag-pill {
+  gap: 0.35em;
+  font-size: 0.9375rem;
+  padding: 0.35em 1em;
 }
 
 .empty-state {
@@ -481,7 +520,7 @@ p {
 }
 
 .post-meta-sep {
-  color: var(--color-border);
+  color: var(--color-text-muted);
 }
 
 .post-tags {
@@ -873,6 +912,16 @@ p {
   }
 }
 
+/* Forced colors drop the background that gradient text is painted with */
+@media (forced-colors: active) {
+  .gradient-text {
+    background: none;
+    color: CanvasText;
+    -webkit-text-fill-color: currentColor;
+    animation: none;
+  }
+}
+
 @media (max-width: 768px) {
   .posts-grid {
     grid-template-columns: 1fr;
@@ -918,6 +967,16 @@ p {
 }
 
 @media (max-width: 480px) {
+  /* A sticky two-row header would cover too much of a small or zoomed viewport */
+  html {
+    scroll-padding-top: var(--space-md);
+  }
+
+  .site-nav {
+    position: static;
+    padding-block: var(--space-sm);
+  }
+
   .nav-links {
     gap: var(--space-md);
   }

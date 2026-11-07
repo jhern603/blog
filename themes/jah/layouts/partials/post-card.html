@@ -1,3 +1,6 @@
+{{- /* Expects dict: "Page" (the post), "HeadingLevel" (optional, defaults to 2). */ -}}
+{{- $level := .HeadingLevel | default 2 -}}
+{{- with .Page -}}
 <article class="post-card">
   <div class="post-card-inner">
 
@@ -9,7 +12,7 @@
       </div>
     {{- end }}
 
-    <h2 class="post-card-title">
+    <h{{ $level }} class="post-card-title">
       <a href="{{ .Permalink }}" class="post-card-link">
         {{- $gradientWord := .Params.gradientWord -}}
         {{- if $gradientWord -}}
@@ -20,13 +23,13 @@
           {{ .Title }}
         {{- end -}}
       </a>
-    </h2>
+    </h{{ $level }}>
 
     <p class="post-card-summary">
       {{- with .Description -}}
         {{ . }}
       {{- else -}}
-        {{ truncate 140 "..." .Summary }}
+        {{ .Summary | plainify | htmlUnescape | truncate 140 "..." }}
       {{- end -}}
     </p>
 
@@ -34,10 +37,11 @@
       <time class="post-card-date" datetime="{{ .Date.Format "2006-01-02" }}">
         {{ .Date.Format "Jan 2, 2006" }}
       </time>
-      <span class="post-card-sep">&middot;</span>
+      <span class="post-card-sep" aria-hidden="true">&middot;</span>
       <span class="post-card-reading-time">{{ .ReadingTime }} min read</span>
     </div>
 
 
   </div>
 </article>
+{{- end -}}

@@ -5,15 +5,15 @@
     </a>
     <nav class="nav-links" aria-label="Main navigation">
       <a href="{{ "/" | relURL }}"
-         class="nav-link{{ if .IsHome }} nav-link--active{{ end }}">
+         class="nav-link{{ if .IsHome }} nav-link--active{{ end }}"{{ if .IsHome }} aria-current="page"{{ end }}>
         Home
       </a>
       <a href="{{ "/posts/" | relURL }}"
-         class="nav-link{{ if eq .Section "posts" }} nav-link--active{{ end }}">
+         class="nav-link{{ if eq .Section "posts" }} nav-link--active{{ end }}"{{ if eq .Section "posts" }} aria-current="{{ if .IsPage }}true{{ else }}page{{ end }}"{{ end }}>
         Posts
       </a>
       <a href="https://josehernandez.dev" class="nav-link nav-link--external" target="_blank" rel="noopener">
-        Portfolio
+        Portfolio<span class="visually-hidden"> (opens in a new tab)</span>
       </a>
     </nav>
   </div>

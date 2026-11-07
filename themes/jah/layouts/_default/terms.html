@@ -1,0 +1,30 @@
+{{ define "main" }}
+
+<section class="list-hero">
+  <div class="list-hero-inner">
+    <p class="eyebrow-label">Browse</p>
+    <h1 class="list-heading">{{ .Title }}</h1>
+  </div>
+</section>
+
+<section class="posts-section">
+  <div class="section-inner">
+    {{ with .Pages.ByTitle }}
+      <ul class="term-list">
+        {{ range . }}
+          {{ $count := len .Pages }}
+          <li>
+            <a href="{{ .RelPermalink }}" class="tag-pill">
+              {{- .Title }} <span aria-hidden="true">({{ $count }})</span>
+              <span class="visually-hidden">, {{ $count }} {{ cond (eq $count 1) "post" "posts" }}</span>
+            </a>
+          </li>
+        {{ end }}
+      </ul>
+    {{ else }}
+      <p class="empty-state">Nothing here yet. Check back soon.</p>
+    {{ end }}
+  </div>
+</section>
+
+{{ end }}

@@ -1,0 +1,16 @@
+{{- /* Returns the best available meta description for the current page. */ -}}
+{{- $description := .Description -}}
+{{- if not $description -}}
+  {{- if .IsPage -}}
+    {{- $description = .Summary | plainify | htmlUnescape | truncate 160 -}}
+  {{- else if eq .Kind "term" -}}
+    {{- $description = printf "Posts by %s filed under the %s %s." .Site.Params.author .Title .Data.Singular -}}
+  {{- else if eq .Kind "taxonomy" -}}
+    {{- $description = printf "Browse every post by %s, grouped by %s." .Site.Params.author (lower .Title) -}}
+  {{- else if eq .Kind "section" -}}
+    {{- $description = printf "Every post by %s on engineering, architecture, and craft." .Site.Params.author -}}
+  {{- else -}}
+    {{- $description = .Site.Params.description -}}
+  {{- end -}}
+{{- end -}}
+{{- return (string $description) -}}

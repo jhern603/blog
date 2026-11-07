@@ -1,7 +1,7 @@
 name        = 'Jose Hernandez'
 license     = 'MIT'
 description = 'Personal blog theme — dark navy, Inter, animated gradient accent.'
-min_version = '0.110.0'
+min_version = '0.158.0'
 
 [author]
   name = 'J.A. Hernandez'

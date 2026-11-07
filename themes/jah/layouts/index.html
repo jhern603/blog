@@ -25,7 +25,7 @@
     </div>
     <div class="posts-grid">
       {{ range first 6 $posts }}
-        {{ partial "post-card.html" . }}
+        {{ partial "post-card.html" (dict "Page" . "HeadingLevel" 3) }}
       {{ end }}
     </div>
     {{ if gt (len $posts) 6 }}

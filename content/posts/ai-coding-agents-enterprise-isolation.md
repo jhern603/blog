@@ -2,7 +2,7 @@
 title: "Deploying AI Coding Agents: Ensuring a Safe Operating Environment for AI-Driven Development"
 date: 2026-04-03T00:00:00-06:00
 draft: false
-description: "AI Agents ship features fast. They also read all your sernsitive files, run shell commands, and make network requests at machine speed. A structured analysis of three isolation architectures and the role of human oversight."
+description: "AI Agents ship features fast. They also read all your sensitive files, run shell commands, and make network requests at machine speed. A structured analysis of three isolation architectures and the role of human oversight."
 tags: ["security", "Agentic AI", "Docker", "Kubernetes", "devops", "architecture"]
 categories: ["AI Security"]
 gradientWord: "AI Coding Agents:"
@@ -255,6 +255,8 @@ The two controls together form a **defense-in-depth** posture:
 
 ```mermaid
 flowchart TD
+    accTitle: Layers between an agent action and an external system
+    accDescr: An agent action passes in sequence through an isolation boundary that limits what it can touch, a human-in-the-loop checkpoint where a person approves it, and an audit log recording the approval, before reaching the external system or repository.
     A([Agent Action])
     B["**Isolation Boundary**\nlimits what the agent can touch"]
     C["**HITL Checkpoint**\nhuman approves the agent's intended action"]
@@ -274,6 +276,8 @@ Agent-generated changes can be committed to a feature branch, triggering an auto
 
 ```mermaid
 flowchart TD
+    accTitle: CI/CD pipeline with a manual approval gate
+    accDescr: An agent commits to a feature branch, which triggers automated lint, test, and security scan steps. A manual approval stage notifies a reviewer by email, Slack, or Teams. If approved, the change enters the deployment pipeline to staging or production. If rejected, the changes are revised and the agent re-runs.
     A([Agent commits to feature branch]) --> B
     B["CI Pipeline\nautomated: lint · test · security scan"] --> C
     C{Manual Approval Stage} -->|Notification| D
@@ -301,6 +305,8 @@ The container is built with the required language runtimes and tooling, and the 
 
 ```mermaid
 graph TB
+    accTitle: Container isolation layers
+    accDescr: The host OS, macOS or Linux, runs a container runtime holding the agent container. The container has file system access, shell execution, restricted network access, and a mounted workspace volume. The host filesystem is not mounted, and the host network is policy-controlled.
     subgraph HOST["Host OS (macOS / Linux)"]
         subgraph RUNTIME["Container Runtime"]
             subgraph CONTAINER["Agent Container"]
@@ -364,6 +370,8 @@ In this strategy, the agent runs inside a full virtual machine, providing hardwa
 
 ```mermaid
 graph TB
+    accTitle: Virtual machine isolation layers
+    accDescr: The host OS runs a hypervisor such as KVM, QEMU, or VZ, which runs a Linux guest VM containing the agent process. The agent has a full OS environment, an isolated network, and an independent kernel. The host is completely isolated from the guest.
     subgraph HOST["Host OS"]
         subgraph HV["Hypervisor (KVM / QEMU / VZ)"]
             subgraph VM["Guest VM (Linux)"]
@@ -428,6 +436,8 @@ A particularly relevant variant is using **gVisor's runsc** as the container run
 
 ```mermaid
 graph TB
+    accTitle: Nested sandbox isolation layers
+    accDescr: The host OS runs an outer container, the agent sandbox, where network and file system policy is enforced. Inside it, the agent process contains two ephemeral task environments, A and B.
     subgraph HOST["Host OS"]
         subgraph OUTER["Outer Container — Agent Sandbox network &amp;\nFS policy enforced at this boundary"]
             subgraph PROC["Agent Process"]
