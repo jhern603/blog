@@ -62,8 +62,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="{{ "/css/main.css" | absURL }}">
-<link rel="stylesheet" href="{{ "/css/syntax.css" | absURL }}">
+{{- /* Fingerprinted so a returning visitor never pairs new HTML with a cached old stylesheet. */ -}}
+{{- range slice "css/main.css" "css/syntax.css" }}
+<link rel="stylesheet" href="{{ (resources.Get . | fingerprint).RelPermalink }}">
+{{- end }}
 
 {{ range .AlternativeOutputFormats -}}
   <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title }}">
